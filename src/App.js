@@ -3,12 +3,12 @@ import Todo from './components/TodoComponents/Todo';
 
 const toDoList = [
   {
-    task: 'Organize Garage',
+    task: "Organize Garage",
     id: 1528817077286,
     completed: false
   },
   {
-    task: 'Bake Cookies',
+    task: "Bake Cookies",
     id: 1528817084358,
     completed: false
   }
@@ -17,7 +17,9 @@ const toDoList = [
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      toDo: toDoList
+    };
   }
 
 
@@ -30,11 +32,11 @@ class App extends React.Component {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <div>
-          {toDoList.map(list => (
-            <Todo list={list}/>
+        
+        <div className="todo-list">
+          {this.state.toDo.map(list => (
+            <Todo list={list} />
           ))}
-          
         </div>
       </div>
     );
