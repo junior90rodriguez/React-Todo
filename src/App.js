@@ -1,4 +1,5 @@
 import React from 'react';
+import Todo from './components/TodoComponents/Todo';
 
 const toDoList = [
   {
@@ -15,7 +16,7 @@ const toDoList = [
 
 class App extends React.Component {
   constructor() {
-    super():
+    super();
     this.state = {};
   }
 
@@ -29,6 +30,12 @@ class App extends React.Component {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
+        <div>
+          {toDoList.map(list => (
+            <Todo list={list}/>
+          ))}
+          
+        </div>
       </div>
     );
   }
