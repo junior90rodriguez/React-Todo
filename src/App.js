@@ -42,17 +42,19 @@ class App extends React.Component {
             <Todo list={list} />
           ))}
         </div>
+
+        <form>
+          <input
+            type="text"
+            value=""
+            placeholder="name"
+            name="name"
+            onChange={this.changeHandler}
+            />
+        </form>
       </div>
      
-      <form>
-        <input
-          type="text"
-          value=""
-          placeholder="name"
-          name="name"
-          onChange={this.changeHandler}
-          />
-      </form>
+      
     );
   }
 }
