@@ -22,6 +22,10 @@ class App extends React.Component {
     };
   }
 
+  changeHandler = event => {
+    console.log(event);
+  }
+
 
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -39,6 +43,16 @@ class App extends React.Component {
           ))}
         </div>
       </div>
+     
+      <form>
+        <input
+          type="text"
+          value=""
+          placeholder="name"
+          name="name"
+          onChange={this.changeHandler}
+          />
+      </form>
     );
   }
 }
