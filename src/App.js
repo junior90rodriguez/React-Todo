@@ -1,5 +1,5 @@
 import React from 'react';
-import Todo from './components/TodoComponents/Todo';
+
 
 const toDoList = [
   {
@@ -36,26 +36,8 @@ class App extends React.Component {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        
-        <div className="todo-list">
-          {this.state.toDo.map(list => (
-            <Todo list={list} />
-          ))}
-        </div>
-
-        <form>
-          <input
-            type="text"
-            value=""
-            placeholder="name"
-            name="name"
-            onChange={this.changeHandler}
-            />
-        </form>
       </div>
-     
-      
-    );
+    )
   }
 }
 
