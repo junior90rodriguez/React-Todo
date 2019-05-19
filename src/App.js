@@ -1,5 +1,6 @@
 import React from 'react';
 import TodoList from './components/TodoComponents/TodoList'
+import { isIterable } from 'core-js';
 
 
 const list = [
@@ -23,9 +24,9 @@ class App extends React.Component {
     };
   }
 
-  changeHandler = event => {
-    console.log(event);
-  }
+  toggleItem = itemId => {
+    console.log("itemId: ", itemId);
+  };
 
 
   // you will need a place to store your state in this component.
@@ -40,7 +41,9 @@ class App extends React.Component {
           <h2>Welcome to your Todo App!</h2>
         </div>
         <TodoList
-          list={this.state.list} />
+          list={this.state.list} 
+            toggleItem={this.toggleItem}
+          />
       </div>
       
     )
