@@ -1,6 +1,6 @@
 import React from 'react';
 import TodoList from './components/TodoComponents/TodoList'
-import { isIterable } from 'core-js';
+
 
 
 const list = [
@@ -26,6 +26,17 @@ class App extends React.Component {
 
   toggleItem = itemId => {
     console.log("itemId: ", itemId);
+    this.setState({
+      list: this.state.list.map(item => {
+        if(itemId === item.id) {
+          return {
+            ...item,
+            completed: !item.completed
+          };
+        }
+        return item;
+      })
+    })
   };
 
 
@@ -42,7 +53,7 @@ class App extends React.Component {
         </div>
         <TodoList
           list={this.state.list} 
-            toggleItem={this.toggleItem}
+          toggleItem={this.toggleItem}
           />
       </div>
       
