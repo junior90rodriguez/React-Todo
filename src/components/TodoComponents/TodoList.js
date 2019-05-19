@@ -5,9 +5,9 @@ import List from './List'
 
 const TodoList = props => {
     return(
-        <div className="do-list">
+        <div>
             {props.list.map(item => (
-                <List key={item.id} name={item.task} toggleItem={props.toggleItem} />
+                <List key={item.id} item={item} toggleItem={props.toggleItem} />
             ))}
         </div>
     );

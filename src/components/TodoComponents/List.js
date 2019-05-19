@@ -2,8 +2,8 @@ import React from 'react';
 
 const List = props => {
     return(
-        <div>
-            <p>{props.name}</p>
+        <div onClick={() => props.toggleItem(props.item.id)}>
+            <p>{props.item.task}</p>
         </div>
     );
 };
